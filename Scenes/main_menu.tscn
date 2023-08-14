@@ -1,21 +1,23 @@
-[gd_scene load_steps=2 format=3 uid="uid://ho46an48dkfm"]
+[gd_scene load_steps=3 format=3 uid="uid://ho46an48dkfm"]
 
 [ext_resource type="Texture2D" uid="uid://d1glehckah7dp" path="res://Assets/pia21590_orig.jpg" id="1_l1cca"]
+[ext_resource type="Script" path="res://Scripts/main_menu.gd" id="1_y6yp8"]
 
 [node name="main_menu" type="Node2D"]
+script = ExtResource("1_y6yp8")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = 1152.0
-offset_bottom = 648.0
+offset_right = 1200.0
+offset_bottom = 675.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 texture = ExtResource("1_l1cca")
-expand_mode = 3
+expand_mode = 5
 stretch_mode = 4
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
@@ -24,10 +26,24 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
+offset_left = 525.0
+offset_top = 260.0
+offset_right = 675.0
+offset_bottom = 380.0
 grow_horizontal = 2
 grow_vertical = 2
 alignment = 1
+
+[node name="new_game" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "NEW GAME"
+
+[node name="load_game" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "LOAD GAME"
+
+[node name="quit" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "QUIT"
+
+[connection signal="pressed" from="VBoxContainer/new_game" to="." method="_on_new_game_pressed"]
