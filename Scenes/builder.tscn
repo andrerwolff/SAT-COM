@@ -1,0 +1,85 @@
+[gd_scene load_steps=2 format=3 uid="uid://cuytk0au787on"]
+
+[ext_resource type="Script" path="res://Scripts/builder.gd" id="1_2vecu"]
+
+[node name="builder" type="Node2D"]
+script = ExtResource("1_2vecu")
+
+[node name="menu_panel" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 210.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.196078, 0.196078, 0.196078, 0)
+
+[node name="TabBar" type="TabBar" parent="menu_panel"]
+layout_mode = 0
+offset_right = 208.0
+offset_bottom = 50.0
+tab_count = 3
+tab_0/title = "Manage"
+tab_1/title = "Build"
+tab_2/title = "Track"
+
+[node name="info_bar" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 220.0
+offset_right = 1200.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.196078, 0.196078, 0.196078, 1)
+
+[node name="stats_panel" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 220.0
+offset_top = 470.0
+offset_right = 940.0
+offset_bottom = 600.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.196078, 0.196078, 0.196078, 1)
+
+[node name="build_panel" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 220.0
+offset_top = 60.0
+offset_right = 940.0
+offset_bottom = 460.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.196078, 0.196078, 0.196078, 1)
+
+[node name="saved_vehicle_panel" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 950.0
+offset_top = 60.0
+offset_right = 1200.0
+offset_bottom = 600.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.196078, 0.196078, 0.196078, 1)
+
+[node name="items_panel" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 60.0
+offset_right = 210.0
+offset_bottom = 600.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.196078, 0.196078, 0.196078, 1)
+
+[connection signal="tab_changed" from="menu_panel/TabBar" to="." method="_on_tab_bar_tab_changed"]
