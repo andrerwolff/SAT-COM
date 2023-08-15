@@ -1,0 +1,44 @@
+[gd_scene load_steps=5 format=3 uid="uid://7pqrew4ao3ua"]
+
+[ext_resource type="Script" path="res://Scripts/main.gd" id="1_k2fvg"]
+[ext_resource type="Texture2D" uid="uid://d3pqmmsay3udj" path="res://Assets/clipboard-line-chart.svg" id="1_q03h7"]
+[ext_resource type="Texture2D" uid="uid://c53c7nwmc4gph" path="res://Assets/clipboard-settings.svg" id="2_ge7dv"]
+[ext_resource type="Texture2D" uid="uid://cqybnhtwfbjse" path="res://Assets/clipboard-search.svg" id="3_k1yyu"]
+
+[node name="main" type="Node"]
+script = ExtResource("1_k2fvg")
+
+[node name="scene_container" type="Container" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 162.0
+offset_bottom = 54.0
+
+[node name="manage" type="Button" parent="HBoxContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+icon = ExtResource("1_q03h7")
+expand_icon = true
+
+[node name="build" type="Button" parent="HBoxContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+icon = ExtResource("2_ge7dv")
+expand_icon = true
+
+[node name="track" type="Button" parent="HBoxContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+icon = ExtResource("3_k1yyu")
+expand_icon = true
+
+[connection signal="pressed" from="HBoxContainer/manage" to="." method="_on_manage_pressed"]
+[connection signal="pressed" from="HBoxContainer/build" to="." method="_on_build_pressed"]
+[connection signal="pressed" from="HBoxContainer/track" to="." method="_on_track_pressed"]

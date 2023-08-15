@@ -1,0 +1,50 @@
+[
+	{
+		"name": "Geostationary Communication",
+		"description": "Deploy a communication satellite in a geostationary orbit to provide continuous coverage for telecommunications.",
+		"orbital_parameters": {
+			"orbit_type": "Geostationary",
+			"altitude_km": 35786,
+			"inclination_deg": 0,
+			"eccentricity": 0
+		},
+		"difficulty": "Intermediate",
+		"reward": 15000
+	},
+	{
+		"name": "Polar Earth Observation",
+		"description": "Launch a satellite into a polar orbit to capture comprehensive images of the Earth's surface for environmental monitoring.",
+		"orbital_parameters": {
+			"orbit_type": "Polar",
+			"altitude_km": 600,
+			"inclination_deg": 90,
+			"eccentricity": 0
+		},
+		"difficulty": "Intermediate",
+		"reward": 12000
+	},
+	{
+		"name": "Molniya High-Latitude Coverage",
+		"description": "Place a satellite in a Molniya orbit to ensure extended coverage over high-latitude regions for communication and navigation.",
+		"orbital_parameters": {
+			"orbit_type": "Molniya",
+			"altitude_km": 40000,
+			"inclination_deg": 63.4,
+			"eccentricity": 0.74
+		},
+		"difficulty": "Hard",
+		"reward": 18000
+	},
+	{
+		"name": "Sun-Synchronous Earth Science",
+		"description": "Deploy a satellite in a Sun-Synchronous Orbit (SSO) to capture consistent images of the Earth's surface for scientific research.",
+		"orbital_parameters": {
+			"orbit_type": "Sun-Synchronous",
+			"altitude_km": 800,
+			"inclination_deg": 98,
+			"eccentricity": 0
+		},
+		"difficulty": "Intermediate",
+		"reward": 13000
+	}
+]

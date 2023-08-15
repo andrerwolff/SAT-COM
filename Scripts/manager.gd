@@ -1,17 +1,28 @@
 extends Node2D
 
 
+var file_name = "res://Data/contracts.json"
+
+
 func _ready():
-	$menu_panel/TabBar.set_current_tab(0)
-
-func _on_menu_button_pressed():
-	print($menu_panel/MenuButton.text)
+	var global = $/root/Global
+	$info_bar/company_name.text = global.player_name
+	$info_bar/bank_amt.text = str(global.player_funds)
+	$info_bar/company_rep.text = global.player_rating
 	
+	var file = FileAccess.open(file_name, FileAccess.READ)
+	var json_text = file.get_as_text()
+	file.close()
+	var data = JSON.parse_string(json_text)
+	if data:
+		for contract in data:
+			for info in contract:
+				pass
 
 
-func _on_tab_bar_tab_changed(tab):
-	print(tab)
-	if tab == 1:
-		get_tree().change_scene_to_file("res://Scenes/builder.tscn")
-	elif tab == 2:
-		get_tree().change_scene_to_file("res://Scenes/tracker.tscn")
+func _on_item_list_item_selected(index):
+	print(index, "selected")
+
+
+func _on_item_list_item_activated(index):
+	print(index, "activated")
