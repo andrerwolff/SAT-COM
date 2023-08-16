@@ -81,33 +81,35 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.196078, 0.196078, 0.196078, 1)
 
-[node name="ItemList" type="ItemList" parent="contracts_panel"]
+[node name="contract_list" type="ItemList" parent="contracts_panel"]
 layout_mode = 0
 offset_left = 4.0
 offset_top = 26.0
 offset_right = 591.0
 offset_bottom = 271.0
 
-[node name="Label3" type="Label" parent="contracts_panel"]
+[node name="details" type="Label" parent="contracts_panel"]
+layout_mode = 0
 offset_left = 6.0
 offset_top = 287.0
 offset_right = 132.0
 offset_bottom = 313.0
 text = "Contract Details:"
 
-[node name="Label" type="Label" parent="contracts_panel"]
+[node name="open_contracts" type="Label" parent="contracts_panel"]
 layout_mode = 0
 offset_left = 4.0
 offset_right = 130.0
 offset_bottom = 26.0
 text = "Open Contracts:"
 
-[node name="Label2" type="Label" parent="contracts_panel"]
+[node name="contract_details" type="Label" parent="contracts_panel"]
 layout_mode = 0
 offset_left = 4.0
-offset_top = 276.0
+offset_top = 318.0
 offset_right = 592.0
 offset_bottom = 529.0
+autowrap_mode = 2
 
 [node name="tech_panel" type="ColorRect" parent="."]
 anchors_preset = 15
@@ -134,5 +136,5 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.196078, 0.196078, 0.196078, 1)
 
-[connection signal="item_activated" from="contracts_panel/ItemList" to="." method="_on_item_list_item_activated"]
-[connection signal="item_selected" from="contracts_panel/ItemList" to="." method="_on_item_list_item_selected"]
+[connection signal="item_activated" from="contracts_panel/contract_list" to="." method="_on_item_list_item_activated"]
+[connection signal="item_selected" from="contracts_panel/contract_list" to="." method="_on_item_list_item_selected"]
