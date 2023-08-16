@@ -16,8 +16,10 @@ func _ready():
 	var data = JSON.parse_string(json_text)
 	if data:
 		for contract in data:
-			for info in contract:
-				pass
+			var item_text = contract["name"]
+			
+			$contracts_panel/ItemList.add_item(item_text)
+
 
 
 func _on_item_list_item_selected(index):
